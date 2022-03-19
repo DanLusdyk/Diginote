@@ -1,0 +1,21 @@
+body {
+    font-family: Roboto, Arial;
+    background-color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.logout-notification {
+    color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(255, 255, 255, 0.45);
+}

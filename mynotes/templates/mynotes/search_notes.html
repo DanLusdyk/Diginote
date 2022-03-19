@@ -1,0 +1,22 @@
+{% extends "mynotes/base.html" %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'mynotes/notes.css' %}">
+{% endblock head %}
+{% block content %}
+  {% if searched %}
+    <p style="margin-top: 80px; margin-left: 16px; color: white; font-family: Roboto, Arial; font-size: 18px;">Search results for "{{ searched }}"...</p>
+    <div class="note-grid" style="margin-top: 5px;">
+      {% for note in notes %}
+        <a href="{% url 'note-detail' note.id %}" class="note-link">
+          <div class="note">
+          <div class="note-title">{{ note.title }}</div>
+          <div class="note-content">{{ note.content }}</div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p style="margin-top: 80px; margin-left: 16px; color: white; font-family: Roboto, Arial; font-size: 18px;">Please enter something to search</p>
+  {% endif %}
+{% endblock content %}

@@ -1,0 +1,31 @@
+html, body, .form-container {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.87);
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Roboto;
+}
+
+.legend-border {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(255, 255, 255, 0.45);
+    padding-bottom: 5px;
+}
+
+.footer-border {
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 8px;
+}

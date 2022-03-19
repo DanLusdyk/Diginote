@@ -1,0 +1,23 @@
+{% extends "mynotes/base.html" %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'mynotes/note_detail.css' %}">
+{% endblock head %}
+{% block content %}
+  <div class="note-container">
+    <div class="note">
+      <p class="note-title">{{ object.title }}</p>
+      <p class="note-content">{{ object.content }}</p>
+      <div class="note-info-container">
+        <small>
+          <a class="note-link" href="{% url 'note-update' object.id %}">Update</a>
+          |
+          <a class="note-link" href="{% url 'note-delete' object.id %}">Delete</a>
+        </small>
+        <small>
+          <span class="last-updated-text">Last Updated: {{ object.lastUpdated }}</span>
+        </small>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
