@@ -10,10 +10,16 @@ from django.db.models import Q
 # Create your views here.
 @login_required
 def home(request):
-    context = {
-        'notes': reversed(Note.objects.filter(author=request.user.id)),
-        'title': 'Diginote Home'
-    }
+    notes = Note.objects.filter(author=request.user.id)
+    if notes.exists():
+        context = {
+            'notes': reversed(notes),
+            'title': 'Diginote Home'
+        }
+    else:
+        context = {
+            'title': 'Diginote Home'
+        }
 
     return render(request, 'mynotes/home.html', context)
 

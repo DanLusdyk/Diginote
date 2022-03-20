@@ -4,14 +4,18 @@
   <link rel="stylesheet" type="text/css" href="{% static 'mynotes/notes.css' %}">
 {% endblock head %}
 {% block content %}
-  <div class="note-grid">
-    {% for note in notes %}
-      <a href="{% url 'note-detail' note.id %}" class="note-link">
-        <div class="note">
-          <div class="note-title">{{ note.title }}</div>
-          <div class="note-content">{{ note.content }}</div>
-        </div>
-      </a>
-    {% endfor %}
-  </div>
+  {% if notes %}
+    <div class="note-grid">
+      {% for note in notes %}
+        <a href="{% url 'note-detail' note.id %}" class="note-link">
+          <div class="note">
+            <div class="note-title">{{ note.title }}</div>
+            <div class="note-content">{{ note.content }}</div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p style="margin-top: 80px; text-align: center; color: white; font-family: Roboto, Arial; font-size: 18px;">No Notes Yet. Click the "+" icon in the top right to take a note!</p>
+  {% endif %}
 {% endblock content %}
